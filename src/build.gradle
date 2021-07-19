@@ -1,0 +1,23 @@
+apply plugin: 'application'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation "junit:junit"
+}
+
+jar {
+	baseName = 'fr-gradle'
+	version =  '0.1.0'
+	manifest {
+		attributes 'Main-Class': 'reader.SimpleReader'
+    }
+}
+
+application {
+    mainClass.set("reader.SimpleReader")
+}
+
